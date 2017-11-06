@@ -1,0 +1,114 @@
+{
+    "users":[
+        {
+            "id": 1,
+            "username": "admin",
+            "password": "12345678"
+        }
+    ],
+    "token":[
+        {
+            "id": "admin",
+            "password": "12345678",
+            "userId": 1,
+            "token": "1234567890-0987654321"
+        }
+    ],
+    "stores":[
+        {
+            "id": 1,
+            "address": "San José"
+        },
+        {
+            "id": 2,
+            "address": "Multiplaza Este"
+        },
+        {
+            "id": 3,
+            "address": "Mall San Pedro"
+        }
+    ],
+    "articles":[
+        {
+            "id": 1,
+            "description": "zapato cuero negro para hombre",
+            "price": 30000,
+            "size": "40",
+            "total_in_shelf": 5,
+            "total_in_vault": 15,
+            "store_id": 3
+        },
+        {
+            "id": 2,
+            "description": "zapato cuero café para hombre",
+            "price": 40000,
+            "size": "42",
+            "total_in_shelf": 3,
+            "total_in_vault": 10,
+            "store_id": 2
+        },
+        {
+            "id": 3,
+            "description": "zapato cuero negro para hombre",
+            "price": 30000,
+            "size": "41",
+            "total_in_shelf": 2,
+            "total_in_vault": 5,
+            "store_id": 1
+        },
+        {
+            "id": 4,
+            "description": "zapato negro tacón",
+            "price": 25000,
+            "size": "38",
+            "total_in_shelf": 3,
+            "total_in_vault": 8,
+            "store_id": 3
+        },
+        {
+            "id": 5,
+            "description": "tennis color blanco hombre",
+            "price": 50000,
+            "size": "43",
+            "total_in_shelf": 5,
+            "total_in_vault": 12,
+            "store_id": 2
+        },
+        {
+            "id": 6,
+            "description": "zapato mocasín niño",
+            "price": 15000,
+            "size": "28",
+            "total_in_shelf": 4,
+            "total_in_vault": 4,
+            "store_id": 1
+        },
+        {
+            "id": 7,
+            "description": "faja cuero café",
+            "price": 10000,
+            "size": "medium",
+            "total_in_shelf": 5,
+            "total_in_vault": 4,
+            "store_id": 3
+        },
+        {
+            "id": 8,
+            "description": "cartera cuero café",
+            "price": 12000,
+            "size": "",
+            "total_in_shelf": 5,
+            "total_in_vault": 3,
+            "store_id": 2
+        },
+        {
+            "id": 9,
+            "description": "bolso de mano cuero negro",
+            "price": 13000,
+            "size": "",
+            "total_in_shelf": 2,
+            "total_in_vault": 3,
+            "store_id": 1
+        }
+    ]
+}

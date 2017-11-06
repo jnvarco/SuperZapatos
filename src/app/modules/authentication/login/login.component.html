@@ -1,15 +1,21 @@
 <section class="container-fluid">
   <div class="row justify-content-md-center align-middle">
     <form #loginForm="ngForm" class="col-12 col-md-6 col-lg-4" [class.submitted]="loginForm.submitted" novalidate>
-      <h1 class="mt-4">Login</h1>
+      <h1 class="mt-4">Inicio de sesión</h1>
 
       <div class="form-group">
-        <label for="email">Email:</label>
-        <input id="email" name="email" type="email" class="form-control" required/>
+        <label for="usuario">Usuario:</label>
+        <input id="usuario" name="usuario" type="text" class="form-control" ngModel #usuario="ngModel" required/>
+        <div class="error" *ngIf="loginForm.submitted">
+          <p *ngIf="usuario.errors?.required">Requerido</p>          
+        </div>
       </div>
       <div class="form-group">
-        <label for="password">Password:</label>    
-        <input id="password" name="password" type="password" class="form-control" required/>
+        <label for="contrasenna">Contraseña:</label>    
+        <input id="contrasenna" name="contrasenna" type="password" ngModel #contrasenna="ngModel" class="form-control" required/>
+        <div class="error" *ngIf="loginForm.submitted"> 
+          <p *ngIf="contrasenna.errors?.required">Requerido</p>
+        </div>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Login</button>
