@@ -1,3 +1,4 @@
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
@@ -14,6 +15,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     CoreModule,
     AuthenticationModule,
+    DashboardModule,
     AppRoutingModule
   ],
   providers: [],

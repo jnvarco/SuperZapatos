@@ -38,10 +38,13 @@ export class AuthenticationService {
         (error) => {
           reject(error);
         }
-
       )
     }
     );
+  }
+
+  public getIsLoggedIn():boolean{
+    return this.isLoggedIn;
   }
 
 }

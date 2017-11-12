@@ -1,6 +1,6 @@
 <section class="container-fluid">
   <div class="row justify-content-md-center align-middle">
-    <form #loginForm="ngForm" class="col-12 col-md-6 col-lg-4" [class.submitted]="loginForm.submitted" novalidate>
+    <form #loginForm="ngForm" class="col-12 col-md-6 col-lg-4" [class.submitted]="loginForm.submitted" novalidate (ngSubmit)="login(loginForm.value, loginForm.valid)">
       <h1 class="mt-4">Inicio de sesión</h1>
 
       <div class="form-group">
