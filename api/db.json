@@ -1,4 +1,16 @@
 {
+    "menu":[
+        {
+            "textKey": "Tiendas",
+            "link": "/stores",
+            "icon": "home"
+        },
+        {
+            "textKey": "Artículos",
+            "link": "/articles",
+            "icon": "snowflake-o"
+        }
+    ],
     "users":[
         {
             "id": 1,

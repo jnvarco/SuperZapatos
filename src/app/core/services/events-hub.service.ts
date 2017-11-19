@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class EventsHubService {
 
-  public isLoggedIn$: Subject<boolean> = new Subject();
+  public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor() { }
 

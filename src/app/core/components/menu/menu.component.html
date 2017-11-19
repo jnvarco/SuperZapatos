@@ -1,0 +1,6 @@
+<ul class="nav"> 
+  <li *ngFor="let item of menuList" class="nav-item">
+    <a [routerLink] = "item.link" class="nav-link" [routerLinkActive]="['active']"><i class="fa fa-{{item.icon}}"></i> {{item.textKey}}</a>
+  </li>
+</ul>
+
