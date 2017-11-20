@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'auth' },
   { path: 'auth', loadChildren: './modules/authentication/authentication.module#AuthenticationModule' },
   { path: 'dashboard', loadChildren: './modules/dashboard/dashboard.module#DashboardModule' },
+  { path: 'stores', loadChildren: './modules/stores/stores.module#StoresModule' },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
 ]
 

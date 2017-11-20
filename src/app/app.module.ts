@@ -1,3 +1,4 @@
+import { StoresModule } from './modules/stores/stores.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule, // required animations module
     AuthenticationModule,
     DashboardModule,
+    StoresModule,
     AppRoutingModule
   ],
   providers: [],
