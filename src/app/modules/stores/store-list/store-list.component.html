@@ -6,6 +6,15 @@
       </div>
     </div>    
   </div>
+
+  <div class="row max-content">
+    <div class="col text-right">
+      <div *ngIf="showEdit">
+        <SupZap-store-edit [store]="store" (storeEdited)="storeEdited()"></SupZap-store-edit>
+      </div>
+    </div>    
+  </div>
+
   <div class="row max-content">
     <div class="col-6">
       <h1>Lista de Tiendas</h1>
@@ -29,7 +38,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let store of storesList">
-                  <td><i class="fa fa-pencil"></i></td>
+                  <td><button type="button" class="btn btn-link" (click)="setShowEdit(store)"><i class="fa fa-pencil"></i></button></td>
                   <td>{{store.address}}</td>
                   <td>{{store.phoneNumber}}</td>              
                 </tr>

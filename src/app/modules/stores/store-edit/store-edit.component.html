@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row max-content">
+    <div class="col" *ngIf="store">
+
+      <form #editStoreForm="ngForm" [class.submitted]="editStoreForm.submitted" class="text-left"
+        (ngSubmit)="editStore(editStoreForm.valid)" novalidate>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <h2>Actualizar Tienda</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-sm-4">
+              <div class="form-group">
+                <label for="address">Dirección:</label>
+                <input type="text" name="address" id="address" [(ngModel)] = "store.address" #address="ngModel" required />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group">
+                <label for="phoneNumber">Teléfono:</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" [(ngModel)]="store.phoneNumber" #phoneNumber="ngModel" required />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <button type="submit" class="btn btn-secondary"><i class="fa fa-check"></i> Aceptar</button>
+                <button type="button" class="btn btn-secondary" (click)="setStoreEdited(false)"><i class="fa fa-ban"></i> Cancelar</button>
+            </div>
+          </div>    
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
