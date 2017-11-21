@@ -1,3 +1,4 @@
+import { LoggedGuard } from './guards/logged.guard';
 import { MenuService } from './data-services/menu.service';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { StoreService } from './data-services/store.service';
@@ -43,6 +44,7 @@ import { MenuComponent } from './components/menu/menu.component';
     AuthenticationService,
     StoreService,
     MenuService,
+    LoggedGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
