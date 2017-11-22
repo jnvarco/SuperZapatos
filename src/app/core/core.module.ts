@@ -1,3 +1,4 @@
+import { ArticleService } from './data-services/article.service';
 import { LoggedGuard } from './guards/logged.guard';
 import { MenuService } from './data-services/menu.service';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
@@ -13,6 +14,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -25,6 +27,7 @@ import { MenuComponent } from './components/menu/menu.component';
     FormsModule,
     HttpClientModule,
     ToastrModule.forRoot(), // ToastrModule added
+    NgbModule.forRoot()
   ],
   declarations: [PageNotFoundComponent, HeaderComponent, MenuComponent],
 
@@ -33,6 +36,7 @@ import { MenuComponent } from './components/menu/menu.component';
     RouterModule,
     FormsModule,
     HttpClientModule,
+    NgbModule,
     PageNotFoundComponent,
     HeaderComponent
   ],
@@ -43,6 +47,7 @@ import { MenuComponent } from './components/menu/menu.component';
     LocalStorageService,
     AuthenticationService,
     StoreService,
+    ArticleService,
     MenuService,
     LoggedGuard,
     {

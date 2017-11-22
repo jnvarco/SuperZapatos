@@ -1,3 +1,4 @@
+import { ArticlesModule } from './modules/articles/articles.module';
 import { StoresModule } from './modules/stores/stores.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
@@ -20,6 +21,7 @@ import { AppComponent } from './app.component';
     AuthenticationModule,
     DashboardModule,
     StoresModule,
+    ArticlesModule,
     AppRoutingModule
   ],
   providers: [],

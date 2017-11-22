@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'auth', loadChildren: './modules/authentication/authentication.module#AuthenticationModule' },
   { path: 'dashboard', loadChildren: './modules/dashboard/dashboard.module#DashboardModule' },
   { path: 'stores', loadChildren: './modules/stores/stores.module#StoresModule' },
+  { path: 'articles', loadChildren: './modules/articles/articles.module#ArticlesModule' },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
 ]
 
