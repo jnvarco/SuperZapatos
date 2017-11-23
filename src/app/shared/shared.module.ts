@@ -3,21 +3,23 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { PaginationComponent } from './components/pagination/pagination.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule
   ],
-  declarations: [PaginationComponent],
+  declarations: [],
   exports:[
     CommonModule,
     FormsModule,
     RouterModule,
-    PaginationComponent
+    NgbModule,
+    NgxPaginationModule
   ]
 })
 export class SharedModule { }

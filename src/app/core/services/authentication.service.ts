@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoggerService } from './../data-services/logger.service';
 import { LocalStorageService } from './local-storage.service';
 import { EventsHubService } from './events-hub.service';
@@ -13,7 +14,8 @@ export class AuthenticationService {
   constructor(
     private eventsHubService: EventsHubService,
     private localStorageService: LocalStorageService,
-    private loggerService: LoggerService
+    private loggerService: LoggerService,
+    private router: Router
   ) { 
     this.isLoggedIn = false;
 
@@ -45,6 +47,12 @@ export class AuthenticationService {
 
   public getIsLoggedIn():boolean{
     return this.isLoggedIn;
+  }
+
+  public logout(){
+    this.eventsHubService.setLoggedIn(false);
+    this.localStorageService.deleteAll();
+    this.router.navigate(['/login']);
   }
 
 }

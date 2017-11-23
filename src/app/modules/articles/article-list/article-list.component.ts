@@ -15,9 +15,9 @@ export class ArticleListComponent implements OnInit {
   public page: number;
   public collectionSize: number;
   public maxSize: number;
+  public pageSize: number;
   public rotate: boolean;
   public boundaryLinks: boolean;
-  public itemsPerPage: number;
 
   constructor(
     private articleService: ArticleService,
@@ -27,9 +27,9 @@ export class ArticleListComponent implements OnInit {
     this.maxSize = 5;
     this.rotate = true;
     this.boundaryLinks = true;
-    this.itemsPerPage = 5;
+    this.pageSize = 5;
+    this.page = 1;
     this.getArticles();
-    this.pageChangedSubscription();
    }
 
   ngOnInit() {
@@ -42,17 +42,6 @@ export class ArticleListComponent implements OnInit {
         (articles) => {
           this.articlesList = <Array<Article>>articles;
           this.collectionSize = this.articlesList.length;
-          this.toastr.info(`size ${this.collectionSize}`);
-        }
-      );
-  }
-
-  private pageChangedSubscription(){
-    this.eventsHubService.pageChanged$
-      .subscribe(
-        (page) => {
-          this.page = page;
-          this.toastr.info(`pagina ${this.page}`);
         }
       );
   }

@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from './../../services/authentication.service';
 import { EventsHubService } from './../../services/events-hub.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private eventsHubService: EventsHubService,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private toastr: ToastrService
   ) { 
     this.isLoggedInSubscription();
   }
@@ -26,6 +28,11 @@ export class HeaderComponent implements OnInit {
     .subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;
     });
+  }
+
+  public logout(){
+    this.authenticationService.logout();
+    this.toastr.success('La sesión se cerró satisfactoriamente','Cierre de sesión');
   }
 
 }
