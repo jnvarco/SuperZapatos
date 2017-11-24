@@ -27,15 +27,23 @@ export class AuthenticationService {
     );    
   }
 
-  public login(credentials: object): Promise<any>{
+  public login(credentials: any): Promise<any>{
     return new Promise((resolve,reject) => {
       this.loggerService.login(credentials)
       .subscribe(
         (response) => {
           this.token = <Token>response;
-          this.localStorageService.set('token',this.token);
 
-          resolve(this.token);
+          //Se valida la contraseña
+          if(`${credentials.contrasenna}`.localeCompare(this.token.password) == 0) {
+            this.localStorageService.set('token',this.token);
+
+            resolve(this.token);
+          }
+          else{
+            resolve('-1');
+          }
+
         },
         (error) => {
           reject(error);

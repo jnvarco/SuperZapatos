@@ -30,10 +30,16 @@ export class LoginComponent implements OnInit {
     }
 
     this.authenticationService.login(credentials)
-    .then(() => {      
-      this.toastr.success('Bienvenido (a)','Sesión Iniciada');
-      this.evetsHubService.setLoggedIn(true);
-      this.router.navigate(['/dashboard']);     
+    .then((response) => {      
+      if(response != '-1'){
+
+        this.toastr.success('Bienvenido (a)','Sesión Iniciada');
+        this.evetsHubService.setLoggedIn(true);
+        this.router.navigate(['/dashboard']);     
+      }
+      else{
+        this.toastr.error('La contraseña es inválida. Pruebe nuevamente!', 'Contraseña inválida');
+      }
     })
     .catch((error) => {
       console.log(error);
