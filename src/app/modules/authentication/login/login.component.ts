@@ -1,3 +1,4 @@
+import { INVALID_PASSWORD } from './../../../shared/constants';
 import { EventsHubService } from './../../../core/services/events-hub.service';
 import { AuthenticationService } from './../../../core/services/authentication.service';
 import { ToastrService } from 'ngx-toastr';
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
 
     this.authenticationService.login(credentials)
     .then((response) => {      
-      if(response != '-1'){
+      if(response != INVALID_PASSWORD){
 
         this.toastr.success('Bienvenido (a)','Sesión Iniciada');
         this.evetsHubService.setLoggedIn(true);

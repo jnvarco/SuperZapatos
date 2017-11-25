@@ -1,3 +1,5 @@
+import { INVALID_PASSWORD } from './../../shared/constants';
+import { SharedModule } from './../../shared/shared.module';
 import { Router } from '@angular/router';
 import { LoggerService } from './../data-services/logger.service';
 import { LocalStorageService } from './local-storage.service';
@@ -41,7 +43,7 @@ export class AuthenticationService {
             resolve(this.token);
           }
           else{
-            resolve('-1');
+            resolve(INVALID_PASSWORD);
           }
 
         },

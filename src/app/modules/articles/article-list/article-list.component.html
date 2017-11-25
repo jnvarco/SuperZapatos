@@ -1,7 +1,12 @@
 <div class="container-fluid">
   <div class="row max-content">
-    <div class="col-12">
+    <div class="col-12 col-md-8">
       <h1>Lista de Artículos</h1>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="text-left">
+        <a [routerLink]="['../create']" class="btn btn-primary" role="button"><i class="fa fa-plus"></i> Nuevo</a>
+      </div>
     </div>
   </div>
   <div class="row max-content">
@@ -15,15 +20,17 @@
               <th scope="col">Talla</th>
               <th scope="col">Total Estante</th>
               <th scope="col">Total Bodega</th>
+              <th scope="col">Tienda</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let article of articlesList | paginate: { itemsPerPage: pageSize, currentPage: page }">
+            <tr *ngFor="let article of articlesListItem | paginate: { itemsPerPage: pageSize, currentPage: page }">
               <td>{{article.description}}</td>
               <td>{{article.price}}</td>
               <td>{{article.size}}</td>
               <td>{{article.total_in_shelf}}</td>
               <td>{{article.total_in_vault}}</td>
+              <td>{{article.addressStore}}</td>
             </tr>
           </tbody>
         </table>
