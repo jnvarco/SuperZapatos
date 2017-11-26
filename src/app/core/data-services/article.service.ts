@@ -15,6 +15,10 @@ export class ArticleService {
     return this.http.get<Array<Article>>(this.articlesPath);
   }
 
+  public getArticle(id: number){
+    return this.http.get<Article>(`${this.articlesPath}/${id}`);
+  }
+
   public createArticle(article: Article){
     return this.http.post(this.articlesPath,article);
   }

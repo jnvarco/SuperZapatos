@@ -1,0 +1,85 @@
+<section class="container-fluid">
+  <div class="row max-content">
+    <div class="col" *ngIf="article">
+
+      <form #updateArticleForm="ngForm" [class.submitted]="updateArticleForm.submitted" class="text-left"
+       (ngSubmit)="editArticle(updateArticleForm.valid)" novalidate>
+        <div class="container-fluid">
+          <div class="row max-content">
+            <div class="col-12">
+              <h2>Actualizar Artículo</h2>
+              <br/>
+            </div>
+          </div>
+          <div class="row max-content">
+            <div class="col-12 col-sm-4">
+              <div class="form-group">
+                <label for="description">Descripción:</label>
+                <input type="text" id="description" name="description" class="form-control" [(ngModel)]="article.description" #description="ngModel" required/>        
+              </div>
+            </div>
+          </div>
+          <div class="row max-content">
+            <div class="col-12 col-sm-4">
+              <div class="form-group">
+                <label for="price">Precio:</label>
+                <input type="text" class="form-control" id="price" name="price" [(ngModel)] = "article.price" #price="ngModel" required/>        
+              </div>
+            </div>
+          </div>
+          <div class="row max-content">
+            <div class="col col-sm-4">
+              <div class="form-group">
+                <label for="size">Talla:</label>
+                <input type="text" class="form-control" id="size" name="size" [(ngModel)]="article.size" #size="ngModel" required/>        
+              </div>
+            </div>
+          </div>
+          <div class="row max-content">
+            <div class="col-12 col-sm-4">
+              <div class="form-group">
+                <label for="total_in_shelf">Total en estante:</label>
+                <input type="text" class="form-control" id="total_in_shelf" name="total_in_shelf" [(ngModel)]="article.total_in_shelf" #total_in_shelf="ngModel" required/>
+              </div>
+            </div>
+          </div>
+          <div class="row max-content">
+            <div class="col-12 col-sm-4">
+              <div class="form-group">
+                <label for="total_in_vault">Total en bodega:</label>
+                <input type="text" class="form-control" id="total_in_vault" name="total_in_vault" [(ngModel)]="article.total_in_vault" #total_in_vault="ngModel" required/>        
+              </div>
+            </div>
+          </div>
+          <div class="row max-content">
+            <div class="col-12 col-sm-4">
+              <div class="form-group">
+                <label for="store_id">Tienda:</label>
+                <select id="store_id" name="store_id" dropupAuto="false" class="form-control selectpicker dropup" [(ngModel)]="article.store_id" required>
+                  <option value="">Seleccione una tienda</option>
+                  <option *ngFor="let store of storeList" [value]="store.id">{{store.address}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <br/>
+          <br/>
+          <div class="row max-content">
+            <div class="col-12 col-sm-4">
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Modificar Artículo</button>
+                <a [routerLink]="['/articles']" class="btn btn-primary" role="button"><i class="fa fa-ban"></i> Cancelar</a>
+              </div>
+            </div>      
+          </div>    
+          <br/>
+          <br/>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>  
+  
+
+  
+

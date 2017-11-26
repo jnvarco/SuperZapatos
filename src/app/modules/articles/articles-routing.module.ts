@@ -1,3 +1,4 @@
+import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { ArticleCreateComponent } from './article-create/article-create.component';
 import { ArticlesParentComponent } from './articles-parent/articles-parent.component';
 import { NgModule } from '@angular/core';
@@ -6,7 +7,7 @@ import { LoggedGuard } from '../../core/guards/logged.guard';
 import { RouterModule, Routes } from '@angular/router';
 import { ArticleListComponent } from './article-list/article-list.component';
 
-export const routedComponents = [ArticlesParentComponent,ArticleListComponent,ArticleCreateComponent];
+export const routedComponents = [ArticlesParentComponent,ArticleListComponent,ArticleCreateComponent,ArticleEditComponent];
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'articles' },
@@ -15,7 +16,8 @@ const routes: Routes = [
     children:[
       { path: '', pathMatch: 'full', redirectTo: 'list' },
       { path: 'list', component: ArticleListComponent },
-      { path: 'create', component: ArticleCreateComponent }
+      { path: 'create', component: ArticleCreateComponent },
+      { path: 'edit/:id', component: ArticleEditComponent }
     ]
  }
 ]

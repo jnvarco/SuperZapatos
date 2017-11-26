@@ -129,6 +129,15 @@
       "total_in_shelf": 2,
       "total_in_vault": 3,
       "store_id": 1
+    },
+    {
+      "id": 10,
+      "description": "Nuevo artículo2",
+      "price": "202",
+      "size": "42",
+      "total_in_shelf": "11",
+      "total_in_vault": "11",
+      "store_id": "4"
     }
   ]
 }
