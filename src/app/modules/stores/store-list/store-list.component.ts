@@ -14,17 +14,28 @@ export class StoreListComponent implements OnInit {
   public store: Store;
   public showCreate: boolean;
   public showEdit: boolean;
+  public page: number;
+  public collectionSize: number;
+  public maxSize: number;
+  public pageSize: number;
+  public rotate: boolean;
+  public boundaryLinks: boolean;
 
   constructor(
     private storeService: StoreService,
     private toastr: ToastrService
-  ) { 
+  ) {}
+
+  ngOnInit() {
+    this.maxSize = 5;
+    this.rotate = true;
+    this.boundaryLinks = true;
+    this.pageSize = 5;
+    this.page = 1;
+    this.showCreate = false;
     this.showCreate = false;
     this.showEdit = false;
     this.getStores();
-  }
-
-  ngOnInit() {
   }
 
   public setShowEdit(storeSel: any){
@@ -37,6 +48,7 @@ export class StoreListComponent implements OnInit {
     this.storeService.getStores()
       .subscribe((stores) => {
         this.storesList = <Array<Store>>stores;
+        this.collectionSize = this.storesList.length;
       });
   }
 

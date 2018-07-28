@@ -28,6 +28,7 @@
             <tr *ngFor="let article of articlesListItem | paginate: { itemsPerPage: pageSize, currentPage: page }">
               <td>
                 <a [routerLink]="['../edit', article.id]"><i class="fa fa-pencil"></i></a>
+                <button class="btn btn-link" type="button" (click)="deleteArticle(article.id)"><i class="fa fa-trash"></i></button>
               </td>
               <td>{{article.description}}</td>
               <td>{{article.price}}</td>

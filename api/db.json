@@ -46,6 +46,16 @@
       "id": 4,
       "address": "Paseo de las Flores",
       "phoneNumber": "24401024"
+    },
+    {
+      "id": 5,
+      "address": "Plaza de la cultura",
+      "phoneNumber": "22545658"
+    },
+    {
+      "id": 6,
+      "address": "Cartago",
+      "phoneNumber": "25547896"
     }
   ],
   "articles": [

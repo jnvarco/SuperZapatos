@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="row max-content">
-    <div class="col">
+    <div class="col-12 col-sm-4">
         <div class="table-container">
             <table class="table table-striped table-hover table-dark">
               <thead>
@@ -47,4 +47,9 @@
           </div>
     </div>      
   </div> 
+  <div class="row max-content">
+    <div class="col-12 col-md-8">
+      <pagination-controls (pageChange)="page = $event" autoHide="true"></pagination-controls>
+    </div>    
+  </div>
 </div>

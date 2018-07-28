@@ -41,11 +41,17 @@ export class ArticleListComponent implements OnInit {
     this.pageSize = 5;
     this.page = 1;
     this.showCreate = false;
-    this.getArticles();
-    //this.getStores();
-    //setTimeout(() => {
-      //this.getArticlesListItems();
-    //},500);       
+    this.getArticles();          
+  }
+
+  public deleteArticle(id: number){
+    this.articleService.deleteArticle(id)
+    .subscribe(
+      () => {
+        this.toastr.success('Se eliminó el artículo.','Eliminación de artículos');
+        this.getArticles();
+      }
+    );
   }
 
   private getArticles(){
